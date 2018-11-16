@@ -1,4 +1,7 @@
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
 import static org.junit.Assert.*;
 
 public class RainfallStatsTest {
@@ -53,14 +56,10 @@ public class RainfallStatsTest {
 	 * The addMeasurement method should throw an InvalidRainfallException
 	 * if the measurement is negative.
 	 */
-	@Test (expected = InvalidRainfallException.class)
-	public void testAddInvalidMeasurement() {
+
+	@Test(expected = InvalidRainfallException.class)
+	public void testAddInvalidMeasurement() throws InvalidRainfallException{
 		// TODO: write unit test
-//		try {
-//			stats.addMeasurement(-1);
-//		} catch (InvalidRainfallException e){
-//
-//		}
 		stats.addMeasurement(-1);
 	}
 	

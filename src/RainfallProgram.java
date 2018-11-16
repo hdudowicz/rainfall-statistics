@@ -35,6 +35,13 @@ public class RainfallProgram {
 		System.out.println(stats.getCount() + " measurement(s) entered.");
 		
 		// TODO: prevent the exception when no measurements have been entered.
+		if (stats.getCount() == 0){
+			try {
+				stats.addMeasurement(0);
+			} catch (InvalidRainfallException e) {
+				e.printStackTrace();
+			}
+		}
 		System.out.println("Mean rainfall: " + stats.getMean() + " mm");
 		System.out.println("Maximum rainfall: " + stats.getMax() + " mm");
 	}
