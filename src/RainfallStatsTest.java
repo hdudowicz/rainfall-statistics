@@ -17,8 +17,11 @@ public class RainfallStatsTest {
 	 * should throw an IllegalStateException.
 	 */
 	@Test
-	public void testMeanOfNoMeasurements() {
-		// TODO: write unit test
+	public void testMeanOfNoMeasurements() throws InvalidRainfallException {
+		stats.addMeasurement(10);
+		stats.addMeasurement(20);
+		stats.addMeasurement(30);
+		assertEquals(20, stats.getMean(), 0);
 	}
 	
 	/*
@@ -26,8 +29,12 @@ public class RainfallStatsTest {
 	 * should throw an IllegalStateException.
 	 */
 	@Test
-	public void testMaxOfNoMeasurements() {
-		// TODO: write unit test
+	public void testMaxOfNoMeasurements() throws InvalidRainfallException {
+		stats.addMeasurement(1);
+		stats.addMeasurement(10);
+		stats.addMeasurement(5);
+		stats.addMeasurement(20);
+		assertEquals(20, stats.getMax(), 0);
 	}
 	
 	/*

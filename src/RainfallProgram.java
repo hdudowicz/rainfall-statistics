@@ -13,10 +13,19 @@ public class RainfallProgram {
 			System.out.print("> ");
 			String line = keyboard.readLine();
 			if("end".equals(line)) {
+				System.out.println(stats.getCount() + " measurements entered.");
 				break;
 			}
-			
 			// TODO: parse the measurement and add it to stats
+			try {
+				double measurement = Double.parseDouble(line);
+				stats.addMeasurement(measurement);
+			} catch (InvalidRainfallException e){
+				System.out.println("Measurement must not be negative.");
+			} catch(NumberFormatException e){
+				System.out.println("Invalid number (enter \"end\" to stop).");
+			}
+
 			
 			// TODO: print a message if the measurement is negative
 			
